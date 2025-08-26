@@ -131,8 +131,8 @@ if ($_SESSION['otp'] == $otp_entered && $vehicle_id) {
 
 
     if ($driver_mobile) {
-        $sid = "AC6a02c6512b0e3e305bc6a11e2b9ff3dd";
-        $token = "4fc851289107e751aa93def7e3b7c95e";
+        $sid = "";
+        $token = "";
         $twilio = new Client($sid, $token);
 
         $alertMsg = "⚠️ Security Alert: Mobile {$user_mobile} accessed your vehicle RC {$rc_no} at {$city}, {$state}. Reason: {$reason}.";
@@ -140,7 +140,7 @@ if ($_SESSION['otp'] == $otp_entered && $vehicle_id) {
         try {
             $twilio->messages->create(
                 "+91" . $driver_mobile,
-                ["from" => "+18453358933", "body" => $alertMsg]
+                ["from" => "", "body" => $alertMsg]
             );
         } catch (Exception $e) {
             error_log("Driver SMS failed: " . $e->getMessage());
@@ -191,4 +191,5 @@ $stmt->close();
 echo ($status === "success")
     ? json_encode(["status" => "success"])
     : json_encode(["status" => "failed", "message" => "Invalid OTP"]);
+
 ?>
