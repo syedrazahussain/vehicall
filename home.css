@@ -1,0 +1,368 @@
+:root {
+    --panel: 24, 28, 48;
+    --muted: #8a93a6;
+    --brand: #6c5ce7;
+    --accent: #00d2ff;
+    --glass-bg: rgba(var(--panel), .55);
+    --radius-lg: 20px;
+    --shadow: 0 20px 60px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    color: #e7ecff;
+    background: radial-gradient(1200px 800px at 10% -10%, rgba(108, 92, 231, .25), transparent 40%), radial-gradient(1000px 700px at 110% 10%, rgba(0, 210, 255, .18), transparent 40%), linear-gradient(180deg, #0a0f1e, #070a14 60%);
+    -webkit-font-smoothing: antialiased
+}
+
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: saturate(140%) blur(10px);
+    background: var(--glass-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, .06)
+}
+
+.topbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800
+}
+
+.brand i {
+    font-size: 22px;
+    color: var(--accent);
+    filter: drop-shadow(0 0 8px rgba(0, 210, 255, .45))
+}
+
+.brand span {
+    font-size: 18px
+}
+
+.nav {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.nav a {
+    text-decoration: none;
+    color: #cfd7ff;
+    font-weight: 600;
+    padding: 10px 14px;
+    border-radius: 12px;
+    transition: all .15s
+}
+
+.nav a:hover {
+    background: rgba(255, 255, 255, .04)
+}
+
+.nav .logout {
+    color: #ffb4b4;
+}
+
+
+.hero {
+    position: relative;
+    overflow: hidden
+}
+
+.hero-canvas {
+    position: absolute;
+    inset: 0;
+    background: url('car-header.jpg') center/cover no-repeat;
+    filter: saturate(1.05) brightness(.85);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(60% 80% at 30% 10%, rgba(108, 92, 231, .28), transparent 60%), linear-gradient(180deg, rgba(7, 10, 20, .6), rgba(7, 10, 20, .9));
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 16px 36px;
+    display: grid;
+    grid-template-columns: 1fr .45fr;
+    gap: 20px
+}
+
+.hero-left h1 {
+    font-size: clamp(26px, 3vw, 40px);
+    margin: 0 0 12px
+}
+
+.hero-left p {
+    color: var(--muted);
+    margin: 0
+}
+
+
+.shell {
+    max-width: 1100px;
+    margin: -38px auto 60px;
+    padding: 0 16px
+}
+
+.panel {
+    background: rgba(var(--panel), .65);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px)
+}
+
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px
+}
+
+@media(max-width:1000px) {
+    .grid-cards {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:640px) {
+    .grid-cards {
+        grid-template-columns: 1fr
+    }
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .02));
+    border-radius: 14px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: transform .18s ease, box-shadow .18s ease;
+    border: 1px solid rgba(255, 255, 255, .04)
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(16, 24, 40, .6)
+}
+
+.card .icon-wrap {
+    width: 90px;
+    height: 90px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(108, 92, 231, .12), rgba(0, 210, 255, .06));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .02)
+}
+
+.card .icon-wrap i {
+    font-size: 34px;
+    color: var(--accent)
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #e7ecff
+}
+
+.card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center
+}
+
+.card a {
+    margin-top: 8px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--brand), var(--accent));
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700
+}
+
+
+.small-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 8px
+}
+
+.footer {
+    color: #98a2bd;
+    text-align: center;
+    padding: 26px 16px
+}
+
+
+
+@media (max-width: 640px) {
+    .topbar-inner {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .nav a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        
+        padding: 36px 16px 20px;
+    }
+
+    .hero-left h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero-left p {
+        font-size: 0.9rem;
+    }
+
+    .panel.card {
+        margin-top: 16px;
+        
+    }
+
+    .grid-cards {
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .card .icon-wrap {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card .icon-wrap i {
+        font-size: 26px;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+
+    .card a {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+        padding: 20px 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .brand span {
+        font-size: 16px;
+    }
+
+    .hero-left h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav a {
+        font-size: 0.75rem;
+    }
+}
+
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #cfd7ff;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 640px) {
+    div.topbar-inner {
+        margin: 10px;
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+        
+        flex-direction: column;
+        background: rgba(var(--panel), 0.95);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .nav.active {
+        display: flex;
+        
+    }
+
+
+
+
+}

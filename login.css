@@ -1,0 +1,466 @@
+   :root {
+       --bg-1: #071126;
+       --bg-2: #071226;
+       --glass: rgba(255, 255, 255, 0.06);
+       --accent-1: #6c5ce7;
+       --accent-2: #00d2ff;
+       --success: #4ade80;
+       --danger: #ff6b6b;
+       --radius: 14px;
+       --card-width: 420px;
+   }
+
+   
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0
+   }
+
+   html,
+   body {
+       height: 100%
+   }
+
+   body {
+       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+       background: radial-gradient(800px 600px at 10% -10%, rgba(108, 92, 231, .28), transparent 30%),
+           radial-gradient(700px 550px at 110% 20%, rgba(0, 210, 255, .14), transparent 30%),
+           linear-gradient(180deg, var(--bg-1), #041022 60%);
+       color: #e6eef8;
+       -webkit-font-smoothing: antialiased;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       padding: 28px;
+   }
+
+   
+   .orb {
+       position: absolute;
+       border-radius: 50%;
+       filter: blur(36px);
+       opacity: 0.12;
+       pointer-events: none;
+   }
+
+   .orb.one {
+       width: 420px;
+       height: 420px;
+       left: -80px;
+       top: -120px;
+       background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+       transform: rotate(12deg);
+   }
+
+   .orb.two {
+       width: 320px;
+       height: 320px;
+       right: -100px;
+       bottom: -120px;
+       background: linear-gradient(90deg, #00d2ff, #6c5ce7);
+       opacity: 0.08;
+   }
+
+   .orb {
+       position: absolute;
+       border-radius: 50%;
+       filter: blur(36px);
+       opacity: 0.12;
+       pointer-events: none;
+       overflow: hidden;
+       max-width: 100vw;
+   }
+
+   html,
+   body {
+       width: 100%;
+       max-width: 100%;
+       overflow-x: hidden;
+       
+   }
+
+   
+   :root,
+   html,
+   body {
+       width: 100%;
+       max-width: 100%;
+       overflow-x: hidden;
+       
+       overflow-x: clip;
+       
+   }
+
+   
+   body {
+       min-height: 100dvh;
+       position: relative;
+   }
+
+   
+   .bg {
+       position: fixed;
+       inset: 0;
+       overflow: hidden;
+       
+       z-index: 0;
+       pointer-events: none;
+   }
+
+   
+   .bg-gradients {
+       position: absolute;
+       inset: 0;
+       background:
+           radial-gradient(800px 600px at 10% -10%, rgba(108, 92, 231, .28), transparent 30%),
+           radial-gradient(700px 550px at 110% 20%, rgba(0, 210, 255, .14), transparent 30%),
+           linear-gradient(180deg, #071126, #041022 60%);
+   }
+
+   
+   .orb {
+       position: absolute;
+       border-radius: 50%;
+       filter: blur(36px);
+       opacity: 0.12;
+       will-change: transform;
+   }
+
+   .orb.one {
+       width: 420px;
+       height: 420px;
+       left: -80px;
+       top: -120px;
+       background: linear-gradient(90deg, #6c5ce7, #00d2ff);
+       transform: rotate(12deg);
+   }
+
+   .orb.two {
+       width: 320px;
+       height: 320px;
+       right: -100px;
+       bottom: -120px;
+       background: linear-gradient(90deg, #00d2ff, #6c5ce7);
+       opacity: 0.08;
+   }
+
+   
+   .card {
+       z-index: 1;
+       position: relative;
+   }
+
+   
+   body {
+       background: none;
+       
+   }
+
+
+   
+   .card {
+       width: 100%;
+       max-width: var(--card-width);
+       background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+       border: 1px solid rgba(255, 255, 255, 0.06);
+       border-radius: calc(var(--radius) + 6px);
+       padding: 34px;
+       backdrop-filter: blur(12px) saturate(130%);
+       box-shadow: 0 30px 80px rgba(2, 6, 23, 0.6);
+       position: relative;
+       z-index: 2;
+   }
+
+   .brand {
+       display: flex;
+       align-items: center;
+       gap: 12px;
+       margin-bottom: 18px;
+   }
+
+   .brand .logo {
+       width: 56px;
+       height: 56px;
+       border-radius: 12px;
+       background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 20px;
+       box-shadow: 0 8px 28px rgba(108, 92, 231, 0.18);
+       color: white;
+       font-weight: 800;
+   }
+.brand h1 {
+    font-size: 1.25rem;
+    margin: 0;
+    letter-spacing: 0.2px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;   
+    background-clip: text;           
+    -webkit-text-fill-color: transparent; 
+    color: transparent;              
+}
+
+   .brand p {
+       margin: 0;
+       font-size: 0.85rem;
+       color: #b8c7e6;
+       opacity: 0.95
+   }
+
+   
+   form {
+       margin-top: 12px;
+       display: flex;
+       flex-direction: column;
+       gap: 12px;
+   }
+
+   .input {
+       display: flex;
+       align-items: center;
+       gap: 10px;
+       background: rgba(10, 14, 24, 0.32);
+       border-radius: 12px;
+       padding: 10px 12px;
+       border: 1px solid rgba(255, 255, 255, 0.03);
+       transition: box-shadow .18s ease, transform .12s ease;
+   }
+
+   .input:focus-within {
+       box-shadow: 0 6px 18px rgba(0, 210, 255, 0.08);
+       transform: translateY(-2px);
+       border-color: rgba(0, 210, 255, 0.14);
+   }
+
+   .input i {
+       color: rgba(255, 255, 255, 0.72);
+       min-width: 18px;
+       text-align: center;
+       font-size: 14px;
+   }
+
+   .input input {
+       background: transparent;
+       border: 0;
+       outline: 0;
+       color: #eaf4ff;
+       font-size: 0.98rem;
+       width: 100%;
+       padding: 10px 6px;
+       font-weight: 600;
+   }
+
+   .actions {
+       display: flex;
+       align-items: center;
+       gap: 12px;
+       margin-top: 6px;
+       flex-wrap: wrap;
+   }
+
+   .btn {
+       position: relative;
+       overflow: hidden;
+       padding: 12px 16px;
+       border-radius: 12px;
+       border: 0;
+       cursor: pointer;
+       font-weight: 800;
+       letter-spacing: 0.4px;
+       background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+       color: #fff;
+       box-shadow: 0 12px 30px rgba(108, 92, 231, 0.14);
+       transition: transform .12s ease;
+   }
+
+   .btn:hover {
+       transform: translateY(-3px);
+   }
+
+   .btn.ghost {
+       background: transparent;
+       border: 1px solid rgba(255, 255, 255, 0.06);
+       color: #d6e8ff;
+       font-weight: 700;
+   }
+
+   .small {
+       font-size: 0.92rem;
+       opacity: 0.95
+   }
+
+   
+   .btn .ripple {
+       position: absolute;
+       border-radius: 50%;
+       transform: scale(0);
+       animation: ripple .6s linear;
+       background: rgba(255, 255, 255, 0.18);
+   }
+
+   @keyframes ripple {
+       to {
+           transform: scale(4);
+           opacity: 0;
+       }
+   }
+
+   .meta {
+       margin-top: 14px;
+       color: #9fb0d6;
+       font-size: 0.9rem;
+   }
+
+   
+   .toast {
+       position: fixed;
+       top: 22px;
+       right: 22px;
+       display: flex;
+       gap: 12px;
+       align-items: center;
+       padding: 12px 14px;
+       border-radius: 12px;
+       backdrop-filter: blur(8px);
+       box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+       z-index: 9999;
+       transform: translateY(-6px);
+       opacity: 0;
+       transition: all .28s ease;
+   }
+
+   .toast.show {
+       transform: none;
+       opacity: 1;
+   }
+
+   .toast .icon {
+       font-size: 18px;
+       margin-right: 6px;
+   }
+
+   .toast.success {
+       background: linear-gradient(90deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.04));
+       border: 1px solid rgba(74, 222, 128, 0.12);
+       color: var(--success);
+   }
+
+   .toast.error {
+       background: linear-gradient(90deg, rgba(255, 107, 107, 0.06), rgba(255, 107, 107, 0.03));
+       border: 1px solid rgba(255, 107, 107, 0.08);
+       color: var(--danger);
+   }
+
+   
+   .links {
+       display: flex;
+       justify-content: space-between;
+       gap: 8px;
+       margin-top: 6px;
+       align-items: center;
+   }
+
+   .links a {
+       color: #cde8ff;
+       text-decoration: none;
+       font-weight: 600;
+   }
+
+   .links a:hover {
+       text-decoration: underline;
+   }
+
+   
+   
+   @media (max-width: 480px) {
+       body {
+           padding: 16px;
+           overflow-x: hidden;
+
+
+       }
+
+
+
+
+
+
+
+       .card {
+           padding: 20px;
+           width: 100%;
+           max-width: 100%;
+           border-radius: 10px;
+       }
+
+       .brand {
+           flex-direction: row;
+           align-items: center;
+           gap: 10px;
+           margin-bottom: 14px;
+       }
+
+       .brand .logo {
+           width: 44px;
+           height: 44px;
+           font-size: 16px;
+       }
+
+       .brand h1 {
+           font-size: 1rem;
+       }
+
+       .brand p {
+           font-size: 0.8rem;
+       }
+
+       .input input {
+           font-size: 0.9rem;
+           padding: 8px 4px;
+       }
+
+       .actions {
+           flex-direction: column;
+           width: 100%;
+       }
+
+       .actions .btn,
+       .actions .btn.ghost {
+           width: 100%;
+           text-align: center;
+       }
+
+       .links {
+           flex-direction: column;
+           gap: 4px;
+           text-align: center;
+       }
+   }
+
+
+
+   
+   @media (max-width: 360px) {
+       .brand h1 {
+           font-size: 0.9rem;
+       }
+
+       .brand p {
+           font-size: 0.75rem;
+       }
+
+       .meta {
+           font-size: 0.75rem;
+       }
+
+       .toast {
+           left: 50%;
+           transform: translateX(-50%);
+           right: auto;
+           width: 90%;
+           font-size: 0.85rem;
+       }
+   }
