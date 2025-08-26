@@ -18,15 +18,15 @@ $_SESSION['otp_mobile'] = $user_mobile;
 $_SESSION['otp_expiry'] = time() + 300;
 
 
-$sid = "AC6a02c6512b0e3e305bc6a11e2b9ff3dd";
-$token = "4fc851289107e751aa93def7e3b7c95e";
+$sid = "";
+$token = "";
 $twilio = new Client($sid, $token);
 
 try {
     $twilio->messages->create(
         "+91" . $user_mobile,
         [
-            "from" => "+18453358933",
+            "from" => "",
             "body" => "Your verification code is $otp"
         ]
     );
@@ -34,3 +34,4 @@ try {
 } catch (Exception $e) {
     echo json_encode(["status" => "failed", "message" => $e->getMessage()]);
 }
+
